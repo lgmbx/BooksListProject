@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Book>
+
+<div class="row container m-0 p-0">
+    <div class="col-3">
+        <h2 class="text-dark">Books</h2>
+    </div>
+</div>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-primary text-white">Create New</a>
+</p>
+
+<div class="container">
+    <div class="row">
+
+
+        <table class="col-12 table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Author)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Isbn)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Category)
+                    </th>
+                    <th>
+                        
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(itemModel => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(itemModel => item.Author)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(itemModel => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(itemModel => item.Quantity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(itemModel => item.Isbn)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(itemModel => item.Category.Name)
+                        </td>
+                        <td>
+                            <a>Edit</a>
+                            <a>Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
