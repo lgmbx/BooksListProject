@@ -62,8 +62,8 @@
                             @Html.DisplayFor(itemModel => item.Category.Name)
                         </td>
                         <td>
-                            <a>Edit</a>
-                            <a>Delete</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure?')">Delete</a>
                         </td>
                     </tr>
                 }
